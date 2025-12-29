@@ -83,20 +83,6 @@ You **MUST** follow the folder structure below exactly.
 
 ---
 
-##  Task 10 – Log Analyzer (Important)
-
-Task 10 is a **core evaluation task**.
-
-### You are expected to:
-- Parse structured log files
-- Aggregate metrics (status codes, IPs, response time, etc.)
-- Expose REST-like endpoints (CLI or HTTP)
-- Implement filtering & reporting
-- Add **unit + integration tests**
-- Follow clean architecture principles
-
-
----
 
 ##  Task Implementation Format (MANDATORY)
 For **Tasks 1 → 9**, you are required to implement each task **as a Python function** following the format below.
@@ -181,6 +167,22 @@ print(output)
 
 ```
 
+
+
+##  Task 10 – Log Analyzer (Important)
+
+Task 10 is a **core evaluation task**.
+
+### You are expected to:
+- Parse structured log files
+- Aggregate metrics (status codes, IPs, response time, etc.)
+- Expose REST-like endpoints (CLI or HTTP)
+- Implement filtering & reporting
+- Add **unit + integration tests**
+- Follow clean architecture principles
+
+
+---
 
 ##  Testing Requirements (MANDATORY)
 
