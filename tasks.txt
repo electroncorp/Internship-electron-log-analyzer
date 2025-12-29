@@ -1,0 +1,476 @@
+
+Electron Corp – Python Internship Tasks (FULL DOCUMENTATION)
+============================================================
+
+Company:
+---------
+Electron Corp is an IT & Cybersecurity company focused on building secure,
+scalable, and maintainable software systems.
+
+This task set is designed to evaluate:
+- Python fundamentals
+- Algorithmic thinking
+- Data structures
+- Edge case handling
+- Code clarity and documentation
+- Ability to follow specifications
+
+Language:
+---------
+Python 3.x (standard library only unless stated otherwise)
+
+Difficulty Progression:
+-----------------------
+Tasks are ordered from easiest to hardest.
+
+============================================================
+TASK 1 — Merge and Sort Two Lists
+============================================================
+
+Description:
+------------
+Write a function that merges two lists of integers and returns a new list
+sorted in ascending order.
+
+Function Signature:
+-------------------
+merge_and_sort(a: list[int], b: list[int]) -> list[int]
+
+Rules:
+------
+- Do not modify the original lists
+- The result must be a new list
+- Sorting must be numeric
+
+Edge Cases:
+-----------
+- One or both lists empty
+- Negative values
+- Duplicate values
+
+Example:
+--------
+Input:
+a = [5, 3, 8]
+b = [1, 7, 4]
+
+Output:
+[1, 3, 4, 5, 7, 8]
+
+Test Cases:
+-----------
+1) [3,1,2], [5,4] → [1,2,3,4,5]
+2) [], [3,2,1] → [1,2,3]
+3) [-3,-1], [-2,0] → [-3,-2,-1,0]
+4) [1,1,2], [2,3] → [1,1,2,2,3]
+5) [100], [] → [100]
+
+============================================================
+TASK 2 — Palindrome Checker
+============================================================
+
+Description:
+------------
+Determine whether a given string is a palindrome.
+A palindrome reads the same forwards and backwards.
+
+Rules:
+------
+- Ignore case
+- Ignore non-alphanumeric characters
+- Empty string is a palindrome
+
+Function Signature:
+-------------------
+is_palindrome(text: str) -> bool
+
+Example:
+--------
+"A man, a plan, a canal: Panama" → True
+
+Test Cases:
+-----------
+1) "racecar" → True
+2) "RaceCar" → True
+3) "Hello" → False
+4) "" → True
+5) "12321" → True
+6) "No 'x' in Nixon" → True
+7) "abc123" → False
+
+============================================================
+TASK 3 — Word Occurrence Counter
+============================================================
+
+Description:
+------------
+Count how many times each word appears in a string.
+Words are separated by whitespace.
+Punctuation must be preserved.
+
+Function Signature:
+-------------------
+count_words(text: str) -> dict[str, int]
+
+Rules:
+------
+- Case-sensitive
+- Multiple spaces should be ignored
+
+Example:
+--------
+"hello world hello"
+→ {"hello": 2, "world": 1}
+
+Test Cases:
+-----------
+1) "apple banana apple" → {"apple":2,"banana":1}
+2) "word" → {"word":1}
+3) "" → {}
+4) "a  a   b" → {"a":2,"b":1}
+5) "Hello hello" → {"Hello":1,"hello":1}
+
+============================================================
+TASK 4 — Difference From Average
+============================================================
+
+Description:
+------------
+Given a list of numbers, calculate the difference between each number
+and the average of the list.
+
+Formula:
+--------
+difference = value - average
+
+Function Signature:
+-------------------
+diff_from_average(data: list[float]) -> list[float]
+
+Rules:
+------
+- Round results to 2 decimal places
+- Empty list returns empty list
+
+Example:
+--------
+Input: [55,95,62,36,48]
+Output: [-4.20, 35.80, 2.80, -23.20, -11.20]
+
+Test Cases:
+-----------
+1) [10,10,10] → [0.00,0.00,0.00]
+2) [1.5,2.25] → [-0.38,0.38]
+3) [] → []
+4) [100] → [0.00]
+
+============================================================
+TASK 5 — Find Duplicate Elements
+============================================================
+
+Description:
+------------
+Return all values that appear more than once in a list.
+The result must be sorted and contain unique values only.
+
+Function Signature:
+-------------------
+find_duplicates(data: list) -> list
+
+Rules:
+------
+- Preserve original data types
+- Output must be sorted
+
+Example:
+--------
+[1,2,3,2,1] → [1,2]
+
+Test Cases:
+-----------
+1) [4,5,6,5,4,7] → [4,5]
+2) [8,9,10] → []
+3) [] → []
+4) [2,2,2] → [2]
+5) ["a","b","a","b"] → ["a","b"]
+
+============================================================
+TASK 6 — Validate Parentheses
+============================================================
+
+Description:
+------------
+Check whether a string containing brackets is valid.
+
+Valid pairs:
+------------
+(), {}, []
+
+Rules:
+------
+- Brackets must close in correct order
+- Empty string is valid
+
+Function Signature:
+-------------------
+is_valid_brackets(s: str) -> bool
+
+Example:
+--------
+"{[]}" → True
+
+Test Cases:
+-----------
+1) "()" → True
+2) "()[]{}" → True
+3) "(]" → False
+4) "([)]" → False
+5) "{[]}" → True
+6) "" → True
+7) "(((((" → False
+
+============================================================
+TASK 7 — Reconstruct the Coffee Line
+============================================================
+
+Description:
+------------
+Carrol was first in line.
+Each person remembers how many people stood between them and Carrol.
+
+Input:
+------
+A list mem where mem[i] indicates how many people were between person (i+1)
+and Carrol.
+
+Output:
+-------
+The reconstructed order (excluding Carrol) or [] if impossible.
+
+Function Signature:
+-------------------
+reconstruct_line(mem: list[int]) -> list[int]
+
+Rules:
+------
+- Person IDs are 1..n
+- If multiple solutions exist, return any
+- Return [] if no valid solution
+
+Example:
+--------
+Input: [1,2,0]
+Output: [3,1,2]
+
+Test Cases:
+-----------
+1) [1,2,0] → [3,1,2]
+2) [1,0,1] → []
+3) [0] → [1]
+4) [0,0] → []
+5) [2,0,1,0] → []
+
+============================================================
+TASK 8 — Pickaxe Trading Optimization
+============================================================
+
+Description:
+------------
+Decide which pickaxe to buy and which to sell to obtain the strongest
+possible pickaxe within budget constraints.
+
+Function Signature:
+-------------------
+trade_pickaxe(materials, store, inventory, budget) -> tuple | None
+
+Rules:
+------
+- Buy only if strictly stronger than current best
+- Sell weakest pickaxes first
+- Cannot sell unknown or worthless items
+- Budget must never go below zero
+
+Test Cases:
+-----------
+1) Provided example → ("Platinum", {"Copper"}, 25)
+2) Inventory empty, exact budget → buy strongest
+3) Only unsellable items → None
+4) Multiple sales required → valid result
+
+============================================================
+TASK 9 — Chess Move Executor
+============================================================
+
+Description:
+------------
+Apply a sequence of chess moves to a board and return the final board.
+
+Rules:
+------
+- Moves are guaranteed valid
+- Must support:
+  - Normal moves
+  - Captures
+  - Castling
+  - Pawn promotion
+  - En-passant
+
+Function Signature:
+-------------------
+apply_moves(board, moves) -> board
+
+Test Cases:
+-----------
+1) Provided example
+2) Castling only
+3) Promotion with capture
+4) En-passant scenario
+
+============================================================
+TASK 10 — REST-like Log Analyzer (MINI PROJECT)
+============================================================
+
+Goal (short)
+------------
+Build a Python program that parses a directory of HTTP-style log files and outputs a `summary.json`
+that contains:
+- total number of requests,
+- requests per endpoint (count),
+- average response time per endpoint,
+- top 5 slowest endpoints by average response time.
+
+Deliverables
+------------
+1. `analyzer/` package or `src/analyzer.py` (main implementation).
+2. `cli.py` — CLI entrypoint (recommended). Example usage:
+   `python cli.py --logs ./sample_logs --out summary.json`
+3. `tests/` — pytest test suite with unit and integration tests.
+4. `sample_logs/` — a few small `.log` files used in tests & demo.
+5. `summary.json` — example output from sample logs.
+6. `README.md` — usage, assumptions, how to run tests.
+7. (Optional) `web/` — Django or Flask app to expose the summary via HTTP.
+8. `docs/TASK-10-REST-ANALYZER.md` — architecture + design decisions.
+
+Log format (strict)
+-------------------
+Each log line is a single request record. The accepted format (space-separated) is:
+
+<TIMESTAMP> <METHOD> <PATH> <STATUS> <RESPONSE_TIME_MS>
+
+Example lines
+2025-11-10T10:15:00Z GET /api/login 200 134
+2025-11-10T10:15:02Z POST /api/items 201 245
+2025-11-10T10:15:05Z GET /api/items/42 200 310
+
+Assumptions
+-----------
+- TIMESTAMP is ISO-8601-like but parsing timestamps is optional for this task.
+- METHOD is one of GET/POST/PUT/DELETE/PATCH etc.
+- PATH is treated by default as exact (no normalization), but candidate may implement `--normalize`.
+- STATUS is integer.
+- RESPONSE_TIME_MS is integer (milliseconds).
+- Invalid lines should be skipped and optionally reported.
+
+Normalization (design choice)
+-----------------------------
+Choose one behavior and document it:
+- Exact path (default): treat `/api/items/42` distinct from `/api/items/7`.
+- Normalized path: convert numeric IDs into placeholders like `/api/items/{id}` with `--normalize`.
+
+JSON output — `summary.json` schema
+----------------------------------
+Write pretty-formatted JSON (indent=2). Schema:
+
+{
+  "total_requests": 1234,
+  "requests_per_path": { "/api/login": 150, "/api/items": 300 },
+  "avg_response_time_per_path": { "/api/login": 210.5, "/api/items": 120.125 },
+  "slowest_endpoints": [
+    { "path": "/api/items/42", "avg_time_ms": 310.0 },
+    { "path": "/api/login", "avg_time_ms": 210.5 }
+  ]
+}
+
+- `slowest_endpoints`: sorted descending by `avg_time_ms`, length <= 5.
+- Averages should be floats (rounding documented in README, recommended 3 decimals).
+
+Required functionality (must-have)
+---------------------------------
+1. CLI: `python cli.py --logs PATH --out summary.json [--normalize] [--min-count N]`
+2. Parser: parse log lines, skip invalid ones, optionally report skipped count.
+3. Aggregator: one-pass aggregation (counts, total times).
+4. Output: write JSON file matching schema.
+5. Tests: unit tests for parser and aggregator; integration tests for CLI.
+6. Documentation: README with usage and design decisions.
+
+Recommended architecture (CLI approach)
+--------------------------------------
+- analyzer/parser.py — `parse_line(line) -> Optional[dict]`
+- analyzer/aggregator.py — `Aggregator` class with `add(record)` and `summary()` methods
+- cli.py — argument parsing, calls aggregator, writes JSON
+- tests/ — pytest tests and fixtures
+- sample_logs/ — sample .log files
+
+Example dataset (for tests / demo)
+----------------------------------
+sample_logs/log1.log
+2025-01-10T10:15:00Z GET /api/login 200 134
+2025-01-10T10:15:03Z GET /api/login 200 310
+2025-01-10T10:15:05Z POST /api/items 201 245
+2025-01-10T10:15:06Z GET /api/items/42 200 500
+2025-01-10T10:15:07Z GET /api/items/42 404 60
+
+sample_logs/log2.log
+2025-01-11T11:00:00Z GET /api/login 200 220
+2025-01-11T11:01:00Z GET /api/items 200 80
+2025-01-11T11:02:00Z POST /api/items 201 130
+invalid-line here
+
+Testing strategy
+----------------
+Unit tests:
+- tests/test_parser.py: valid line parsing and invalid lines.
+- tests/test_aggregator.py: add records and verify counts and averages.
+Integration:
+- tests/test_cli_integration.py: run CLI on sample_logs and compare JSON.
+
+
+
+Should the candidate use Django?
+--------------------------------
+Short answer: No for required deliverable — CLI is sufficient and preferred.
+Django is optional for extra credit if the candidate exposes API endpoints or persists logs.
+
+Evaluation rubric
+-----------------
+Correctness (50%), Code quality (25%), Tests & CI (15%), Extras (10%).
+
+Starter CLI snippet (for reference)
+----------------------------------
+```py
+# cli.py
+import argparse, json
+from analyzer.aggregator import Aggregator
+from analyzer.parser import parse_line
+from pathlib import Path
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--logs", required=True)
+    p.add_argument("--out", required=True)
+    args = p.parse_args()
+    agg = Aggregator()
+    for f in Path(args.logs).glob("*.log"):
+        with f.open() as fh:
+            for line in fh:
+                rec = parse_line(line)
+                if rec:
+                    agg.add(rec)
+    with open(args.out, "w") as outfh:
+        json.dump(agg.summary(), outfh, indent=2)
+if __name__ == "__main__":
+    main()
+```
+
+
+END OF DOCUMENT
