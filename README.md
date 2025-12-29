@@ -98,6 +98,90 @@ Task 10 is a **core evaluation task**.
 
 ---
 
+##  Task Implementation Format (MANDATORY)
+For **Tasks 1 → 9**, you are required to implement each task **as a Python function** following the format below.
+
+###  Required Function Structure
+Each task **must**:
+- Be implemented as a function
+- Receive inputs as **function arguments**
+- Contain clear logic (no hardcoded values)
+- Return a result (do NOT print inside the function)
+- Be callable for testing
+
+###  Function Template
+
+```python
+def task_name(input1, input2, ...):
+    """
+    Task description:
+    - Explain what the function does
+    - Describe inputs and outputs
+    """
+    # Step 1: input validation
+    # Step 2: core logic
+    # Step 3: return result
+    return result
+
+```
+
+###  Example Task: Count HTTP Status Codes
+
+Create a function that receives a list of HTTP status codes and returns a dictionary
+containing the number of occurrences of each status code.
+
+```python
+def count_http_status_codes(status_codes):
+    """
+    Count occurrences of HTTP status codes.
+
+    Args:
+        status_codes (list): List of integer HTTP status codes
+
+    Returns:
+        dict: Dictionary with status codes as keys and counts as values
+    """
+
+    if not isinstance(status_codes, list):
+        raise ValueError("Input must be a list")
+
+    result = {}
+
+    for code in status_codes:
+        if not isinstance(code, int):
+            raise ValueError("Status codes must be integers")
+
+        if code in result:
+            result[code] += 1
+        else:
+            result[code] = 1
+
+    return result
+
+
+```
+
+###  Example Usage
+
+```python
+codes = [200, 404, 200, 500, 404, 200]
+output = count_http_status_codes(codes)
+print(output)
+
+```
+
+###  Expected Output
+
+```python
+{
+    200: 3,
+    404: 2,
+    500: 1
+}
+
+```
+
+
 ##  Testing Requirements (MANDATORY)
 
 Every task must include:
@@ -108,7 +192,6 @@ Every task must include:
 
 Task 10 must include:
 - Unit tests
-- API tests
 - Invalid data tests
 - Performance-related tests (basic)
 
@@ -125,6 +208,8 @@ Inside `necessary_documents_for_this_tasks/` you must provide:
 | `assumptions.md` | Assumptions you made |
 | `test_cases.md` | Test cases summary |
 | `final_report.md` | What you built, challenges, improvements |
+
+
 
 ---
 
